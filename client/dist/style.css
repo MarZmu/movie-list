@@ -1,3 +1,16 @@
 body {
   font-family: sans-serif, arial;
 }
+
+li {
+  list-style: none;
+  height: 20px;
+  width: 200px;
+  padding: 10px;
+  background-color: rgba(83, 78, 78, 0.993);
+}
+
+.search {
+  height: 20px;
+
+}
