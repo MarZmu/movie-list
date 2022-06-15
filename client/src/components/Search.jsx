@@ -17,7 +17,7 @@ class Search extends React.Component {
     this.props.filterMov(this.state.searchEntry);
   }
 
-  handleSearchChange(e){
+  handleSearchChange(e) {
     //set the entry state to the value of the input bar
     this.setState({searchEntry: e.target.value});
 
@@ -32,16 +32,17 @@ class Search extends React.Component {
       <div>
         <input
         onChange={this.handleSearchChange}
-        className='form-item'
+        className='search-item'
         type='text'
         placeholder='Search..'></input>
       <button
         onClick={this.handleClick}
-        className='form-item'
+        className='search-item'
         >Go!</button>
       </div>
     );
   }
 }
+
 
 export default Search

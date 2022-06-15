@@ -14,8 +14,48 @@ li {
   display: block;
 }
 
-.form-item {
-  display: block;
+.add-item {
+  display: inline-block;
   height: 20px;
 
 }
+
+.search-item {
+  display: inline-block;
+  height: 20px;
+
+}
+
+#list-box {
+  height: fit-content;
+  width: fit-content;
+}
+
+#list-box:button {
+  display: inline-block;
+  height: 20px;
+  width: 70px;
+}
+
+.inactive {
+  background-color: whitesmoke;
+  display: inline-block;
+
+}
+
+.active {
+  background-color: greenyellow;
+  display: inline-block;
+
+}
+
+.watched {
+  float: right;
+  background-color: green;
+}
+
+.not-watched {
+  float: right;
+  background-color: red;
+}
+

@@ -28,11 +28,12 @@ class Add extends React.Component {
       <div>
         <input
           onChange={this.handleAddChange}
-          className='form-item'
+          className='add-item'
           type='text'
           placeholder='Enter a Movie You Would like to Add'>
         </input>
         <button
+          className='add-item'
           onClick={this.handleAddClick}
         >Add!</button>
       </div>
@@ -41,4 +42,4 @@ class Add extends React.Component {
 
 }
 
-export default Add
+export default Add;

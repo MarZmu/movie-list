@@ -1,7 +1,32 @@
-var Watched = (props) => (
+// import React from 'react';
 
+// class Watched extends React.Component {
+//   constructor (props) {
+//     super(props);
+//     this.toggleWatched.bind(this);
+//   }
 
+//   toggleWatched(e) {
+//     //change color
+//     console.log(e.target.className);
+//     var button = e.target;
+//     if (button.className === 'watched'){
+//      button.className = 'not-watched';
+//     } else {
+//      button.className = 'watched';
+//     }
+//     props.changeWatched();
+//   };
 
-    <span>{props.wasWatched ? 'Watched' : 'Not Watched'}</span>
+//   render() {
+//     return (
+//     <button
+//         onClick={this.toggleWatched}
+//         className='watched'
+//     >{this.props.wasWatched ? 'Not Watched' : 'Watched'}</button>
+//     );
+//   }
 
-)
+// }
+
+// export default Watched
