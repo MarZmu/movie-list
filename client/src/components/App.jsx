@@ -31,10 +31,22 @@ class App extends React.Component {
     });
   }
 
+  addMovie(movie) {
+    var alreadyHere = false;
+    movies.forEach((movieObj) => {
+      if (movieObj.title.toUpperCase() === movie.title.toUpperCase()) {
+        alreadyHere = true;
+      }
+    })
+    if (!alreadyHere){
+      movies.push(movie);
+    }
+  }
+
   render() {
     return (
       <div>
-        <Search onSubmit={this.filterMovies}/>
+        <Search addMovie={this.addMovie} onSubmit={this.filterMovies}/>
         <ul>
         {this.state.filteredMovies.map((movie, index) => <li key={index}>{movie.title}</li>)}
         </ul>
@@ -47,20 +59,25 @@ class App extends React.Component {
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {entry: ''};
+    this.state = {
+      searchEntry: '',
+      addEntry: '',
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleAddChange = this.handleAddChange.bind(this);
+    this.handleAddClick = this.handleAddClick.bind(this);
   }
 
   handleSubmit(e) {
     //prevent refresh, and invoke the filter function with the entry value
     e.preventDefault();
-    this.props.onSubmit(this.state.entry);
+    this.props.onSubmit(this.state.searchEntry);
   }
 
-  handleChange(e){
+  handleSearchChange(e){
     //set the entry state to the value of the input bar
-    this.setState({entry: e.target.value});
+    this.setState({searchEntry: e.target.value});
 
     //if search bar entry is left emtpy, redisplay entire list
     if(e.target.value === '') {
@@ -68,18 +85,39 @@ class Search extends React.Component {
     }
   }
 
+  handleAddChange(e) {
+    this.setState({addEntry: e.target.value})
+    console.log(this.state.addEntry);
+  }
+
+  handleAddClick() {
+    var movieToAdd = {title: this.state.addEntry};
+    this.props.addMovie(movieToAdd);
+  }
+
+
 
   render() {
     return (
       <form
+        id='search-add-form'
         onSubmit={this.handleSubmit}>
         <input
-          onChange={this.handleChange}
-          className='search'
+          onChange={this.handleAddChange}
+          className='form-item'
+          type='text'
+          placeholder='Enter a Movie You Would like to Add'>
+        </input>
+        <button
+          onClick={this.handleAddClick}
+        >Add!</button>
+        <input
+          onChange={this.handleSearchChange}
+          className='form-item'
           type='text'
           placeholder='Search..'></input>
         <button
-          className='search'
+          className='form-item'
           type='submit'>Go!</button>
       </form>
     );

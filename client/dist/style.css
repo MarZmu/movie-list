@@ -10,7 +10,12 @@ li {
   background-color: rgba(83, 78, 78, 0.993);
 }
 
-.search {
+#search-add-form {
+  display: block;
+}
+
+.form-item {
+  display: block;
   height: 20px;
 
 }
