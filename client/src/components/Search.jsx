@@ -29,7 +29,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id='search'>
         <input
         onChange={this.handleSearchChange}
         className='search-item'
@@ -45,4 +45,4 @@ class Search extends React.Component {
 }
 
 
-export default Search
+export default Search;

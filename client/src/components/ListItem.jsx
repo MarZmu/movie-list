@@ -1,5 +1,4 @@
 import React from 'react';
-import Watched from './Watched.jsx';
 
 class ListItem extends React.Component {
   constructor(props) {
@@ -26,7 +25,7 @@ class ListItem extends React.Component {
         <button
           onClick={this.toggleWatched}
           className={this.props.movie.watched ? 'not-watched' : 'watched'}>
-          {this.props.movie.watched ? 'Not Watched' : 'Watched'}
+          {this.props.movie.watched ? 'Watched' : 'Not Watched'}
         </button>
       </li>
     );

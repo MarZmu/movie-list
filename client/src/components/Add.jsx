@@ -25,7 +25,7 @@ class Add extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id='add'>
         <input
           onChange={this.handleAddChange}
           className='add-item'
